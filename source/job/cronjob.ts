@@ -32,7 +32,13 @@ class _CronJob {
 			const jobId = ++this.jobIdCounter;
 			console.log(`<< Job ${jobId} started`);
 
-			await DkCommander.RunAsync(Env.cronBatchPath);
+			const result = await DkCommander.RunAsync(Env.cronBatchPath);
+			if (result.stdout) {
+				console.log("=> out: " + result.stdout);
+			}
+			if (result.stderr) {
+				console.log("=> err: " + result.stderr);
+			}
 
 			console.log(`>> Job ${jobId} ended`);
 		});
