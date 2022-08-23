@@ -1,0 +1,1 @@
+journalctl --unit=nodecronService --follow

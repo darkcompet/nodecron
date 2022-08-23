@@ -1,0 +1,15 @@
+[Unit]
+Description=Nodecron Service
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+ExecStart=/bin/bash -c '/var/www/nodecron/local/startServer.sh'
+Restart=on-failure
+KillSignal=SIGINT
+RestartKillSignal=SIGINT
+SyslogIdentifier=nodecronService
+
+[Install]
+WantedBy=multi-user.target
