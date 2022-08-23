@@ -15,7 +15,7 @@ Provide cron jobs intervally, periodcally.
 	npm install
 
 	# Create local folder
-	cp local-sample local
+	cp -R local-sample local
 	chmod +x ./local/*.sh
 
 	# Create env file and Modify env to match with current env.
@@ -24,7 +24,7 @@ Provide cron jobs intervally, periodcally.
 
 	# Make cronjob batch file that be set at above step (for eg,. /var/www/nodecron/local/checkAndDeployServers.sh)
 	# Note: this file must be owned by our service user (for eg,. ubuntu).
-	nano /var/www/nodecron/local/deployServersIfNeed.sh
+	nano ./local/deployServersIfNeed.sh
 
 	# Start server
 	npm start

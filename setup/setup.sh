@@ -15,7 +15,7 @@ _CheckCurrentEnvInfo() {
 }
 
 _CreateService() {
-	cd ${PROJ_ROOT_DIR_PATH}
+	cd ${PROJ_ROOT_DIR_PATH}/setup
 
 	# Create service file
 	sudo cp ./${SERVICE_IDENTIFIER}.service /etc/systemd/system/
@@ -43,4 +43,6 @@ _CompleteSetup() {
 	echo "- Deploy server: ./local/deploy.sh"
 	echo "- Check service status: sudo systemctl status ${SERVICE_IDENTIFIER}"
 	echo "- Check service log: journalctl --unit=${SERVICE_IDENTIFIER} --follow"
+
+	cd ${PROJ_ROOT_DIR_PATH}
 }
