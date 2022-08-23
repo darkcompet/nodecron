@@ -26,3 +26,13 @@ Provide cron jobs intervally, periodcally.
 	# Deploy server
 	./local/deploy.sh
 	```
+
+
+## Tips
+
+- Detect new commit
+
+	```bash
+	git fetch
+	$(git rev-parse HEAD) == $(git rev-parse @{u})
+	```
