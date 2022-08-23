@@ -3,9 +3,7 @@ const path = require('path');
 const createError = require('http-errors');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-// Use dotenv lib to handle with .env file.
-import dotenv from 'dotenv';
-dotenv.config();
+require('dotenv').config();
 
 
 //

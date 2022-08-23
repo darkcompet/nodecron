@@ -5,34 +5,41 @@ Provide cron jobs intervally, periodcally.
 
 ## Quick start
 
-- Run
+- Start server
 
 	```bash
-	# Pull code
+	# Setup project
 	./git-pull.sh
 
-	# Make cronjob batch file `/var/www/checkAndDeployServers.sh`
-	# Then set the file owner as your user (ubuntu).
-	touch /var/www/checkAndDeployServers.sh
-	sudo chown ubuntu:ubuntu /var/www/checkAndDeployServers.sh
-	nano /var/www/checkAndDeployServers.sh
+	# Install node_modules
+	npm install
 
 	# Create local folder
 	cp local-sample local
+	chmod +x ./local/*.sh
 
-	# Install modules
-	npm install
+	# Create env file and Modify env to match with current env.
+	cp .env.sample .env
+	nano .env
 
-	# Deploy server
-	./local/deploy.sh
+	# Make cronjob batch file that be set at above step (for eg,. /var/www/nodecron/local/checkAndDeployServers.sh)
+	# Note: this file must be owned by our service user (for eg,. ubuntu).
+	nano /var/www/nodecron/local/deployServersIfNeed.sh
+
+	# Start server
+	npm start
 	```
 
 
-## Tips
-
-- Detect new commit
+- Setup service
 
 	```bash
-	git fetch
-	$(git rev-parse HEAD) == $(git rev-parse @{u})
+	# Goto root of the project first !
+	cd setup
+	cp .env.sample .env
+	source setup.sh
+
+	_CheckCurrentEnvInfo
+	_CreateService
+	_CompleteSetup
 	```

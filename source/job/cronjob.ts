@@ -30,11 +30,11 @@ class _CronJob {
 
 		cron.schedule(Env.cronExpression, async () => {
 			const jobId = ++this.jobIdCounter;
-			console.log(`Job ${jobId} started`);
+			console.log(`<< Job ${jobId} started`);
 
 			await DkCommander.RunAsync(Env.cronBatchPath);
 
-			console.log(`Job ${jobId} ended`);
+			console.log(`>> Job ${jobId} ended`);
 		});
 	}
 }
