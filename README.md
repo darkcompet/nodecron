@@ -35,8 +35,11 @@ Provide cron jobs intervally, periodcally.
 
 	```bash
 	# Goto root of the project first !
+	# Make env file to match with current env.
 	cd setup
 	cp .env.sample .env
+	nano .env
+
 	source setup.sh
 
 	_CheckCurrentEnvInfo
