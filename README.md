@@ -5,7 +5,7 @@ Provide cron jobs intervally, periodcally.
 
 ## Quick start
 
-- Start server
+- [1/2] Setup project
 
 	```bash
 	# Setup project
@@ -25,13 +25,10 @@ Provide cron jobs intervally, periodcally.
 	# Make cronjob batch file that be set at above step (for eg,. /var/www/nodecron/local/checkAndDeployServers.sh)
 	# Note: this file must be owned by our service user (for eg,. ubuntu).
 	nano ./local/deployServersIfNeed.sh
-
-	# Start server
-	npm start
 	```
 
 
-- Setup service
+- [2/2] Setup service
 
 	```bash
 	# Goto root of the project first !
