@@ -15,7 +15,7 @@ Provide cron jobs intervally, periodcally.
 	npm install
 
 	# Create local folder
-	cp -R local-sample local
+	cp -R sample-local local
 	chmod +x ./local/*.sh
 
 	# Create env file and Modify env to match with current env.
