@@ -7,7 +7,10 @@ Provide cron jobs intervally, periodcally.
 
 - [1/2] Setup project
 
-	```bash
+```bash
+	# Import functions from libs
+	source ./tool/compet/shell-ubuntu/installer.sh
+
 	# Setup project
 	./git-pull.sh
 
@@ -30,12 +33,12 @@ Provide cron jobs intervally, periodcally.
 	# Make cronjob batch file that be set at above step (for eg,. /var/www/nodecron/local/checkAndDeployServers.sh)
 	# Note: this file must be owned by our service user (for eg,. ubuntu).
 	nano ./local/deployServersIfNeed.sh
-	```
+```
 
 
 - [2/2] Setup service
 
-	```bash
+```bash
 	# Goto root of the project first !
 	# Make env file to match with current env.
 	cd setup
@@ -47,4 +50,4 @@ Provide cron jobs intervally, periodcally.
 	_CheckCurrentEnvInfo
 	_CreateService
 	_CompleteSetup
-	```
+```

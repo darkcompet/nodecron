@@ -35,6 +35,11 @@ Provide cron jobs intervally, periodcally.
 	mkdir nodecron && cd nodecron
 	git init
 
+	# Add libs
+	mkdir -p tool/compet && cd tool/compet
+	git submodule add https://github.com/darkcompet/shell-ubuntu.git
+	cd ../..
+
 	# Create project with express generator
 	# Ref: https://expressjs.com/en/starter/generator.html
 	npx express-generator
