@@ -11,6 +11,11 @@ Provide cron jobs intervally, periodcally.
 	# Setup project
 	./git-pull.sh
 
+	# Install node if not yet
+	InstallAndSetupNodejs_ViaNvm_PreSetup
+	# Please kill terminal and re-enter before run it
+	InstallAndSetupNodejs_ViaNvm_PostSetup
+
 	# Install node_modules
 	npm install
 
