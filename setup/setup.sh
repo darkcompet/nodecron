@@ -7,13 +7,6 @@ fi
 
 source .env
 
-
-_CheckCurrentEnvInfo() {
-	echo "Current env info:"
-	echo "ENV: ${ENV}"
-	echo "BRANCH: ${BRANCH}"
-}
-
 _CreateService() {
 	cd ${PROJ_ROOT_DIR_PATH}/setup
 
@@ -38,7 +31,6 @@ _CompleteSetup() {
 	git branch
 
 	echo "=> Congratulation ! Please follow below steps before start server:"
-	echo "- Confirm current branch is matching with current env (${ENV})?"
 	echo "- Modify setting to match with current env: nano .env"
 	echo "- Deploy server: ./local/deploy.sh"
 	echo "- Check service status: sudo systemctl status ${SERVICE_IDENTIFIER}"
