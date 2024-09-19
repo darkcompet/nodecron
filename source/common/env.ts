@@ -8,8 +8,10 @@ class _Env {
 	readonly isStaging = process.env.ENVIRONMENT === "staging";
 	readonly isProduction = process.env.ENVIRONMENT === "production";
 
-	readonly cronExpression = process.env.CRON_EXPRESSION!!;
-	readonly cronBatchPath = process.env.CRON_BATCH_PATH!!;
+	readonly deployDevelopCronExpression = process.env.DEPLOY_DEVELOP_CRON_EXPRESSION!!;
+	readonly deployDevelopCommand = process.env.DEPLOY_DEVELOP_BATCH_PATH!!;
+
+	readonly deployStagingCommand = process.env.DEPLOY_STAGING_BATCH_PATH!!;
 }
 
 export const Env = new _Env();

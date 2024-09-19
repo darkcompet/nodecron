@@ -28,11 +28,11 @@ class _CronJob {
 		// const dayOfWeek = "*"; // 0-7 or SUN-SAT (0 and 7 refer to sunday)
 		// const cronExpression = `${sec} ${min} ${hour} ${dayInMonth} ${month} ${dayOfWeek}`;
 
-		cron.schedule(Env.cronExpression, async () => {
+		cron.schedule(Env.deployDevelopCronExpression, async () => {
 			const jobId = ++this.jobIdCounter;
 			console.log(`<< Job ${jobId} started`);
 
-			const result = await DkCommander.RunAsync(Env.cronBatchPath);
+			const result = await DkCommander.RunAsync(Env.deployDevelopCommand);
 			if (result.stdout) {
 				console.log("=> out: " + result.stdout);
 			}

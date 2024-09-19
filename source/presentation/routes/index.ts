@@ -6,5 +6,6 @@ const topController = new TopController();
 
 router.get('/', topController.Get);
 router.get('/deploy', topController.Deploy);
+router.get('/deployStaging', topController.DeployStaging);
 
 export default router;
