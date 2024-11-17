@@ -8,17 +8,10 @@ Provide cron jobs intervally, periodcally.
 - Setup project
 
 ```bash
-	# Import functions from libs
-	source ./tool/compet/shell-ubuntu/installer.sh
-
-	# Setup project
+	# Pull project
 	./git-pull.sh
 
-	# Install node if not yet
-	InstallAndSetupNodejs_ViaNvm_PreSetup
-	# Please kill terminal and re-enter before run it
-	InstallAndSetupNodejs_ViaNvm_PostSetup
-
+	# Required node installed first !
 	# Install node_modules
 	npm install
 
