@@ -7,7 +7,7 @@ Provide cron jobs intervally, periodcally.
 
 - Install nodejs if not exist (local & server)
 
-	```bash
+```bash
 	# Install nvm (node version management)
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
@@ -26,11 +26,11 @@ Provide cron jobs intervally, periodcally.
 
 	# [Optional] To switch nodejs version, just use
 	nvm use 18
-	```
+```
 
 - Create nodejs server project (local)
 
-	```bash
+```bash
 	# Create empty project and init git, add editorconfig,...
 	mkdir nodecron && cd nodecron
 	git init
@@ -68,4 +68,4 @@ Provide cron jobs intervally, periodcally.
 
 	# Start server, then browser to http://localhost:8300
 	npm start
-	```
+```

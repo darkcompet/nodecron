@@ -14,17 +14,17 @@ export default class TopController {
 
 	async Deploy(req: Request, res: Response, next: NextFunction) {
 		try {
-			const result = await DkCommander.RunAsync(`${Env.deployDevelopCommand}`);
+			const result = await DkCommander.RunAsync(`${Env.deployCommand}`);
 			return res.json(`Deploy output: ${result.stdout}, error: ${result.stderr}`);
 		} catch (e: any) {
 			return res.json(new ApiResponse(e.status ?? 500, Env.debug ? e.message : "Failed"));
 		}
 	}
 
-	async DeployStaging(req: Request, res: Response, next: NextFunction) {
+	async DeployNext(req: Request, res: Response, next: NextFunction) {
 		try {
-			const result = await DkCommander.RunAsync(`${Env.deployStagingCommand}`);
-			return res.json(`DeployStaging output: ${result.stdout}, error: ${result.stderr}`);
+			const result = await DkCommander.RunAsync(`${Env.deployNextCommand}`);
+			return res.json(`DeployNext output: ${result.stdout}, error: ${result.stderr}`);
 		} catch (e: any) {
 			return res.json(new ApiResponse(e.status ?? 500, Env.debug ? e.message : "Failed"));
 		}

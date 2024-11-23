@@ -13,8 +13,8 @@ import { Request, Response, NextFunction } from 'express';
 import { Env } from "./common/env";
 import { CronJob } from './job/cronjob';
 
-// Ignore ssl certificate at development env
-if (Env.isDevelopment) {
+// Ignore ssl certificate at develop env
+if (Env.isDevelop) {
 	process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = "0";
 }
 
@@ -45,7 +45,7 @@ app.use(function (req: Request, res: Response, next: NextFunction) {
 app.use(function (err: any, req: Request, res: Response, next: NextFunction) {
 	// Set locals, only providing error in development
 	res.locals.message = err.message;
-	res.locals.error = req.app.get('env') === 'development' ? err : {};
+	res.locals.error = Env.isDevelop ? err : {};
 
 	// Render the error page
 	res.status(err.status || 500);
